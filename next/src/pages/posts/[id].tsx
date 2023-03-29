@@ -1,3 +1,4 @@
+import MainLayout from '@/layouts/MainLayout'
 import { Post } from '@/models/Post'
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
@@ -22,6 +23,8 @@ const PostDetail = ({ post }: Props) => {
         </div>
     )
 }
+
+PostDetail.Layout = MainLayout
 
 export default PostDetail
 

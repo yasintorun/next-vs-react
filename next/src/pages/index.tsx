@@ -1,3 +1,4 @@
+import MainLayout from '@/layouts/MainLayout'
 import { Post } from '@/models/Post'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
@@ -30,6 +31,8 @@ export default function Home({posts}: Props) {
     </>
   )
 }
+
+Home.Layout = MainLayout
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts`)

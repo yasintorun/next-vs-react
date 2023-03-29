@@ -1,5 +1,7 @@
 import React from 'react'
-import { useSession } from 'next-auth/react'
+import { getSession, useSession } from 'next-auth/react'
+import AdminLayout from '@/layouts/AdminLayout'
+import { GetServerSideProps } from 'next'
 
 const AdminHome = () => {
     const { data: session } = useSession()
@@ -14,6 +16,27 @@ const AdminHome = () => {
             <button>Login</button>
         </div>
     )
+}
+
+AdminHome.Layout = AdminLayout
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const session = await getSession(context)
+
+    if (!session) {
+        return {
+            redirect: {
+                destination: '/login',
+                permanent: false,
+            },
+        }
+    }
+
+    return {
+        props: {
+
+        }
+    }
 }
 
 export default AdminHome

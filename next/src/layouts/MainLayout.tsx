@@ -14,7 +14,9 @@ const MainLayout = ({children}: Props) => {
             <Link href={"/"}>Home</Link>
             <Link href={"/about"}>About Me</Link>
             <Link href={"/admin"}>Admin (Protected)</Link>
-            <Link href={"/split"}>Code Splitting</Link>
+            <Link href={"/pets/1"}>Pet rabit</Link>
+            <Link href={"/pets/2"}>Pet Dog</Link>
+            <Link href={"/pets/3"}>Pet Cat</Link>
         </div>
     </header>
     <main>
